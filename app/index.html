@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h1>Iniciar Sesión</h1>
+        <form id="loginForm">
+            <label for="loginName">Nombre:</label>
+            <input type="text" id="loginName" name="loginName" required>
+            
+            <label for="loginPassword">Contraseña:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+            
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <button id="showRegisterFormButton">Registrar nuevo usuario</button>
+        <div id="loginMessage"></div>
+    </div>
+    
+    <div class="container" id="registerLoginContainer">
+        <h1>Registrar Usuario</h1>
+        <form id="registerLoginForm">
+            <label for="registerName">Nombre:</label>
+            <input type="text" id="registerName" name="registerName" required>
+            
+            <label for="registerPassword">Contraseña:</label>
+            <input type="password" id="registerPassword" name="registerPassword" required>
+            
+            <button type="submit">Registrar Usuario</button>
+        </form>
+        <button id="backToLoginButton">Volver a Iniciar Sesión</button>
+        <div id="registerMessage"></div>
+    </div>
+
+    <div class="container" id="userFormContainer">
+        <h1>Registro de Usuario</h1>
+        <div class="form-container">
+            <form id="userForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="curp">CURP:</label>
+                <input type="text" id="curp" name="curp" required pattern="^[A-Z]{4}\\d{6}[H|M][A-Z]{5}[A-Z0-9]\\d$">
+                
+                <label for="dob">Fecha de Nacimiento:</label>
+                <input type="date" id="dob" name="dob" required>
+                
+                <button type="submit">Registrar</button>
+            </form>
+            <button id="backToLoginFromRegisterButton">Volver a Iniciar Sesión</button>
+        </div>
+        <div id="message"></div>
+        
+        <div id="tableContainer" class="form-container">
+            <h2>Usuarios Registrados</h2>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>CURP</th>
+                        <th>Fecha de Nacimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <button id="backButton">Regresar</button>
+            <button id="deleteLastButton">Borrar Último Registro</button>
+            <button id="downloadUsersTxtButton">Descargar Usuarios (TXT)</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
